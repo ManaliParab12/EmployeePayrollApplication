@@ -12,10 +12,7 @@ const createInnerHtml = () => {
             <td><img class="profile" alt="" src="${empPayrollData._profilePic}"></td>
                 <td>${empPayrollData._name}</td>
                 <td>${empPayrollData._gender}</td>
-                <td>
-                <div class='dept-label'>${empPayrollData._department[0]}</div>
-                <div class='dept-label'>${empPayrollData._department[1]}</div>
-                </td>
+                <td>${getDeptHtml(empPayrollData._department)}</td>
                 <td>${empPayrollData._salary}</td>
                 <td>${empPayrollData._startDate}</td>
                 <td>
@@ -58,4 +55,12 @@ const createEmployeePayrollJSON = () => {
         }
     ];
     return empPayrollListLocal;
+}
+
+const getDeptHtml = (deptList) => {
+    let deptHtml = '';
+    for (const dept of deptList) {
+        deptHtml = `${deptHtml} <div class='dept-label'>${dept}</div>`
+    }
+    return deptHtml;
 }
