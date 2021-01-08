@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
         try {
-            (new EmployeePayrollData()).name = name.value;
+            checkName(name.value);
             setTextValue('.text-error', "");
         } catch (e) {
             setTextValue('.text-error', e);
@@ -19,11 +19,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     const date = document.querySelector('#date');
     date.addEventListener('input', function() {
-        const startDate = new Date(Date.parse(getInputValueById('#day')+ " "+
-                                            getInputValueById('#month')+ " "+
-                                            getInputValueById('#year')));
+        let startDate = getInputValueById('#day')+ " "+getInputValueById('#month')+ " "+
+                                            getInputValueById('#year');
         try {
-            (new EmployeePayrollData()).startDate = startDate;
+            checkStartDate(new Date(Date.parse(startDate)));
             setTextValue('.date-error', "");
         } catch (e) {
             setTextValue('.date-error', e);
@@ -36,6 +35,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         setTextValue('.salary-output', salary.value);
     });
 
+    document.querySelector('#cancelButton'),href = site_properties.home_page;
     checkForUpdate();
 });
 
