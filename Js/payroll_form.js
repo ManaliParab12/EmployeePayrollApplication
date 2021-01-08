@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         setTextValue('.salary-output', salary.value);
     });
 
-    document.querySelector('#cancelButton'),href = site_properties.home_page;
+    document.querySelector('#cancelButton').href = site_properties.home_page;
     checkForUpdate();
 });
 
