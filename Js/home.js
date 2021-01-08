@@ -48,7 +48,7 @@ const getDeptHtml = (deptList) => {
 
 //D40UC1
 const remove = (node) => {
-    let empPayrollData = empPayrollList.find(empData => empData._id == node._id);
+    let empPayrollData = empPayrollList.find(empData => empData._id == node.id);
     if (!empPayrollData) return;
     const index = empPayrollList
                   .map(empData => empData._id)
